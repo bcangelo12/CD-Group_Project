@@ -1,0 +1,19 @@
+[REQUIRED] Name: Brendan Angelo, Victor Nguyen, Ralitza Dimitrova, Carlos Acosta
+[REQUIRED] Project Title: Campfire Stories
+[REQUIRED] Project Stack: Java
+[REQUIRED] GitHub Repo Link: https://github.com/bcangelo12/CD-Group_Project
+
+[REQUIRED] Project Description: A campfire-themed forum where users can share and view horror stories and posts.
+
+[REQUIRED] New Programming Concept(s) I'm Planning to Learn: Bootstrap, learning to how to implement an image as a link, many to many relationships
+
+Week 3 Features
+- all pages functional
+- all backend coding should be mostly finished
+
+Week 4 Features
+- ***Finish CSS work (could be Bootstrap or another framework too instead of CSS)***
+
+Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
+- like/dislike feature
+
