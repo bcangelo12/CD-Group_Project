@@ -51,7 +51,7 @@ public class User {
 	@JoinTable(
 			name="favorites",
 			joinColumns=@JoinColumn(name="user_id"),
-			inverseJoinColumns=@JoinColumn(name="favorite_id"))
+			inverseJoinColumns=@JoinColumn(name="story_id"))
 	private List<Story> storyFavorited;
 
 	public Long getId() {
