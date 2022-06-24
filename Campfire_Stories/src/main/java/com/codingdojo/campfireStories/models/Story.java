@@ -43,7 +43,7 @@ public class Story {
 	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(
 			name="favorites",
-			joinColumns=@JoinColumn(name="favorite_id"),
+			joinColumns=@JoinColumn(name="story_id"),
 			inverseJoinColumns=@JoinColumn(name="user_id"))
 	private List<User> favoriters;
 

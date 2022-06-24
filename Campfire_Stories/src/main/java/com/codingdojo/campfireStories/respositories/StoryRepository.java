@@ -5,10 +5,9 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.codingdojo.campfireStories.models.User;
+import com.codingdojo.campfireStories.models.Story;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long>{
-	List<User> findAll();
-	User findByEmail(String email);
+public interface StoryRepository extends CrudRepository<Story, Long>{
+	List<Story> findAll();
 }
