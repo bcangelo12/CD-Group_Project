@@ -24,6 +24,10 @@ public class StoryService {
 		return story;
 	}
 	
+	public List<Story> getAllStoriesByGenre(String storyGenre) {
+		return storyRepo.findAllByStoryGenre(storyGenre);
+	}
+	
 	public void favoriteStory(Story story, User user) {
 		List<User> favoriters = story.getFavoriters();
 		favoriters.add(user);
