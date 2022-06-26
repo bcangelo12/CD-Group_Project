@@ -10,4 +10,5 @@ import com.codingdojo.campfireStories.models.Story;
 @Repository
 public interface StoryRepository extends CrudRepository<Story, Long>{
 	List<Story> findAll();
+	List<Story> findAllByStoryGenre(String storyGenre);
 }
