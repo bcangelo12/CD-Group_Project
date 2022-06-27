@@ -39,4 +39,14 @@ public class StoryService {
 		favoriters.remove(user);
 		storyRepo.save(story);
 	}
+	
+//	create a new story
+	public Story createStory(Story story) {
+		return storyRepo.save(story);
+	}
+	
+//	update story
+	public Story updateStory(Story story) {
+		return storyRepo.save(story);
+	}
 }
