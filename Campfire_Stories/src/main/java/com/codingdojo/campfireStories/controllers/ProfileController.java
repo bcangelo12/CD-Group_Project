@@ -28,8 +28,8 @@ public class ProfileController {
 		// set up models for user and stories
 //		if(session.getAttribute("loggedInUser")!=null)
 		User loadedUser = userServ.findById(id);
-		model.addAttribute("user", loadedUser);
-		model.addAttribute("userStories",storyServ.getAllStories());
+		model.addAttribute("loadedUser", loadedUser);
+		model.addAttribute("stories",storyServ.getAllStories());
 
 		return "UserPage.jsp";
 	}
