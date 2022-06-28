@@ -47,7 +47,7 @@
   <div class="form-group">
     <form:label path="password" for="exampleInputPassword1" class="label">Password:</form:label>
     <form:errors path="password"/>
-    <form:input type="text" path="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+    <form:input type="password" path="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
   </div>
   
   <div class="form-group">
