@@ -14,14 +14,26 @@
 <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<p> Home Page </p>
-	<p>CSS is linked - try to make background the forest image </p>
-	<p>Testing an image as link here: </p>
-	<a href="/stories/test"><img src='<c:url value="/img/zombie.jpg"/>' alt="test2"/></a>
-	<a href="/stories/Paranomal">Paranormal</a>
-	<a href="/stories/Psychological">Psychological</a>
-	<a href="/stories/Spiritual">Spiritual</a>
-	<a href="/stories/Urbanlegend">Urban Legend</a>
-	<a href="/stories/Creepypasta">Creepypasta</a>
+	<div class="d-flex justify-content-around">
+		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>
+		<a href="/users/${user.id}"><img src='<c:url value="/img/.jpg"/>' alt="user profile page" class="user"/></a>
+		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>		
+	</div>
+	<div class="d-flex justify-content-around">
+		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>
+		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>
+	</div>
+	<div class="d-flex justify-content-around">
+		<a href="/stories/Paranormal"><img src='<c:url value="/img/.jpg"/>' alt="paranormal pic" class="paranormal"/></a>
+	</div>
+	<div class="d-flex justify-content-around">
+		<a href="/stories/Psychological"><img src='<c:url value="/img/.jpg"/>' alt="psychological pic" class="psychological"/></a>
+		<a href="/stories/new"><img src='<c:url value="/img/.jpg"/>' alt="create page pic" class="campfire"/></a>
+		<a href="/stories/Spiritual"><img src='<c:url value="/img/.jpg"/>' alt="spiritual pic" class="spiritual"/></a>
+	</div>
+	<div class="d-flex justify-content-between">
+		<a href="/stories/urban"><img src='<c:url value="/img/.jpg"/>' alt="urban legend pic" class="urban"/></a>
+		<a href="/stories/creepypasta"><img src='<c:url value="/img/.jpg"/>' alt="creepypasta pic" class="creepy"/></a>
+	</div>
 </body>
 </html>

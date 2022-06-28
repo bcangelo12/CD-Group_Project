@@ -33,7 +33,7 @@
 				<form:option value="Paranormal" label="Paranormal"/>
 				<form:option value="Psychological" label="Psychological"/>
 				<form:option value="Spiritual" label="Spiritual"/>
-				<form:option value="Urban Legend" label="Urban Legend"/>
+				<form:option value="Urban" label="Urban Legend"/>
 				<form:option value="Creepypasta" label="Creepypasta"/>
 			</form:select>
 		</p>
