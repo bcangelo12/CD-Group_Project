@@ -43,7 +43,7 @@ public class HomeController {
 			userService.registerUser(user);
 			
 			//Put user in session
-			session.setAttribute("loggedInUser", user);
+			session.setAttribute("loggedInUser", user.getId());
 			return "redirect:/home"; // Name of mainpage??
 		}
 		
@@ -55,7 +55,6 @@ public class HomeController {
 				BindingResult result,
 				HttpSession session,
 				@ModelAttribute("newUser") User user) {
-			System.out.println("Beginning of Method");
 			//Authenticate
 			userService.authenticate(loginUser, result);
 			if(result.hasErrors()) {
@@ -63,10 +62,8 @@ public class HomeController {
 			}
 
 			User loggedInUser = userService.findByEmail(loginUser.getEmail());
-			System.out.printf("Log In User ----", loggedInUser);
 			//Put user in Session
-			session.setAttribute("loggedInUser", loggedInUser);
-			System.out.println("End of Method ---");
+			session.setAttribute("loggedInUser", loggedInUser.getId());
 
 			return "redirect:/home";
 		}
