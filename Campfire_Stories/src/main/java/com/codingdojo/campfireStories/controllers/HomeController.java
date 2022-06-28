@@ -52,18 +52,22 @@ public class HomeController {
 		
 		@PostMapping("/login")
 		public String loginUser(@Valid @ModelAttribute("newLogin") LoginUser loginUser,
-				BindingResult results,
+				BindingResult result,
 				HttpSession session,
 				@ModelAttribute("newUser") User user) {
-			
+			System.out.println("Beginning of Method");
 			//Authenticate
-			userService.authenticate(loginUser, results);
-			if(results.hasErrors()) {
+			userService.authenticate(loginUser, result);
+			if(result.hasErrors()) {
 				return "loginRegister.jsp";
 			}
+
 			User loggedInUser = userService.findByEmail(loginUser.getEmail());
+			System.out.printf("Log In User ----", loggedInUser);
 			//Put user in Session
-			session.setAttribute("LoggedInUser", loggedInUser);
+			session.setAttribute("loggedInUser", loggedInUser);
+			System.out.println("End of Method ---");
+
 			return "redirect:/home";
 		}
 		

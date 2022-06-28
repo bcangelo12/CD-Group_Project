@@ -30,42 +30,42 @@ public class StoryController {
 	@GetMapping("/home")
 	public String home(Model model, HttpSession session) {
 		
-//		if (session.getAttribute("userId") == null) {
-//			return "redirect:/logout";
-//		}
-//		else {
-//			Long userId = (Long) session.getAttribute("userId");
-//			model.addAttribute("user", userServ.findById(userId));
+		if (session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		}
+		else {
+			Long userId = (Long) session.getAttribute("loggedInUser");
+			model.addAttribute("user", userServ.findById(userId));
 			return "home.jsp";
-//		}
+		}
 	}
 	
 	
 	@GetMapping("/stories/{storyGenre}")
 	public String stories(@PathVariable("storyGenre") String storyGenre, HttpSession session, Model model) {
 		
-//		if (session.getAttribute("userId") == null) {
-//			return "redirect:/logout";
-//		}
-//		else {
-//			Long userId = (Long) session.getAttribute("userId");
-//			model.addAttribute("user", userServ.findById(userId));
+		if (session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		}
+		else {
+			Long userId = (Long) session.getAttribute("loggedInUser");
+			model.addAttribute("user", userServ.findById(userId));
 			model.addAttribute("stories", storyServ.getAllStoriesByGenre(storyGenre));
 			return "showstories.jsp";	
-//		}
+		}
 	}
 
 	//create new stories
 	@GetMapping("/stories/new")
 	public String newStory(@ModelAttribute("story") Story story, Model model, HttpSession session) {
 	    
-//		if(session.getAttribute("userId") == null) {
-//			return "redirect:/logout";
-//		}
-//		
-//	    User user = userServ.findById((Long)session.getAttribute("userId"));
-//	    
-//		model.addAttribute("user", user);
+		if(session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		}
+		
+	    User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
+	    
+		model.addAttribute("user", user);
 	    
 	    return "newStory.jsp";
 	}
@@ -78,8 +78,8 @@ public class StoryController {
 		}
 		
 		else {
-//			User user = userServ.findById((Long)session.getAttribute("userId"));
-//			story.setUser(user);
+			User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
+			story.setUser(user);
 			story.setStoryGenre(storyGenre);
 			storyServ.createStory(story);
 			return "redirect:/home";
@@ -90,9 +90,9 @@ public class StoryController {
 	@GetMapping("/stories/{id}/edit")
 	public String edit(@PathVariable("id") Long id, Model model, HttpSession session) {
 	    
-//		if(session.getAttribute("userId") == null) {
-//			return "redirect:/logout";
-//		}
+		if(session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		}
 		
 		Story story = storyServ.findStoryById(id);
 	    model.addAttribute("story", story);
