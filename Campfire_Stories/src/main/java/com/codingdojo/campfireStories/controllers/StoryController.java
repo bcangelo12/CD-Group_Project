@@ -171,5 +171,17 @@ public class StoryController {
 	        return "redirect:/home";
 	    }
 	}
+	
+	@RequestMapping("/stories/{id}/delete")
+	public String deleteStoryUserPage(@PathVariable("id") Long id, HttpSession session) {
+		if (session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		} else {
+			storyServ.deleteStory(storyServ.findStoryById(id));
+			return "redirect:/users/" + session.getAttribute("loggedInUser");
+		}
+	}
+	
+	
 
 }

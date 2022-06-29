@@ -9,7 +9,7 @@ import org.springframework.validation.Errors;
 
 import com.codingdojo.campfireStories.models.LoginUser;
 import com.codingdojo.campfireStories.models.User;
-import com.codingdojo.campfireStories.respositories.UserRepository;
+import com.codingdojo.campfireStories.repositories.UserRepository;
 
 @Service
 public class UserService {

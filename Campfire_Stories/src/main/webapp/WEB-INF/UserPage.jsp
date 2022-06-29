@@ -75,31 +75,37 @@
 		</c:when>
 		<c:otherwise>
 		<h3 class="text-light my-2">Favorited Stories</h3>
-		<c:forEach var="favs" items="${stories}">
-		<!-- need to add condition to remove user submitted stories from here (if time) -->
-		<c:if test="${favs.favoriters.contains(loadedUser)}">
-			<c:if test="${favs.id == loadUser.stories.getId()}">
+		<c:set var="notCreator" value="false"/>
+		<c:forEach var="favorite" items="${favoriteStories}">
+		<c:choose>
+		<c:when test="${loadedUser.id!=favorite.user.id}">
+			<c:set var="notCreator" value="true"/>
 			<div class="card text-center my-3 bg-secondary" style="width: 36rem;">
 				<div class="card-body">
-					<h5 class="card-title">${favs.storyTitle}</h5>
-					<p class="card-text">${favs.storyContent}</p>
+					<h5 class="card-title">${favorite.storyTitle}</h5>
+					<p class="card-text">${favorite.storyContent}</p>
 					<c:choose>
-						<c:when test="${favs.updatedAt!=null}">
-							<p class="card-text"><small>Last updated on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${favs.updatedAt}"></fmt:formatDate></small></p>
+						<c:when test="${favorite.updatedAt!=null}">
+							<p class="card-text"><small>Last updated on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${favorite.updatedAt}"></fmt:formatDate></small></p>
 						</c:when>
 						<c:otherwise>
-							<p class="card-text"><small>Created on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${favs.createdAt}"></fmt:formatDate></small></p>
+							<p class="card-text"><small>Created on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${favorite.createdAt}"></fmt:formatDate></small></p>
 						</c:otherwise>
 					</c:choose>
-					<p class="card-text"><small>Story Genre: ${favs.storyGenre}</small></p>
+					<p class="card-text"><small>Story Genre: ${favorite.storyGenre}</small></p>
 					<p class="fst-italic text-center">This story is one of your favorites. Did a ghost add it without your knowledge?</p>
-					<a href="/users/${loadedUser.id}/${favs.id}/unfavorite" class="btn btn-danger">Unfavorite</a>
+					<a href="/users/${loadedUser.id}/${favorite.id}/unfavorite" class="btn btn-danger">Unfavorite</a>
 				</div>
 			</div>
-			</c:if>
-			<h3>No favorite stories that aren't your own!</h3>
-		</c:if>
+		</c:when>
+		<c:otherwise>
+			<c:set var="creator" value="true"/>
+		</c:otherwise>
+		</c:choose>
 		</c:forEach>
+		<c:if test="${notCreator == false && creator == true}">
+			<h3>No favorited stories that aren't your own!</h3>
+		</c:if>
 		</c:otherwise>
 		</c:choose>
 	</div>
