@@ -28,11 +28,13 @@ public class ProfileController {
 		// set up models for user and stories
 		if(session.getAttribute("loggedInUser")==null) {
 			return "redirect:/logout";
-		} else {
+		} else if(session.getAttribute("loggedInUser")==id) {
 			User loadedUser = userServ.findById(id);
 			model.addAttribute("loadedUser", loadedUser);
 			model.addAttribute("stories",storyServ.getAllStories());
 			return "UserPage.jsp";
+		} else {
+			return "redirect:/logout";
 		}
 	}
 }
