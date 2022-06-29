@@ -1,4 +1,4 @@
-package com.codingdojo.campfireStories.respositories;
+package com.codingdojo.campfireStories.repositories;
 
 import java.util.List;
 

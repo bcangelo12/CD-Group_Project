@@ -33,6 +33,7 @@ public class ProfileController {
 			User loadedUser = userServ.findById(id);
 			model.addAttribute("loadedUser", loadedUser);
 			model.addAttribute("stories",storyServ.getAllStories());
+			model.addAttribute("favoriteStories", storyServ.findStoriesByFavoriters(loadedUser));
 			return "UserPage.jsp";
 		} else {
 			return "redirect:/logout";

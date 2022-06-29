@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.codingdojo.campfireStories.models.Story;
 import com.codingdojo.campfireStories.models.User;
-import com.codingdojo.campfireStories.respositories.StoryRepository;
+import com.codingdojo.campfireStories.repositories.StoryRepository;
 
 @Service
 public class StoryService {
@@ -52,6 +52,10 @@ public class StoryService {
 	
 	public void deleteStory(Story story) {
 		storyRepo.delete(story);
+	}
+	
+	public List<Story> findStoriesByFavoriters(User user) {
+		return storyRepo.findByFavoriters(user);
 	}
 	
 }

@@ -137,7 +137,7 @@ public class StoryController {
 			story.setUser(user);
 			story.setStoryGenre(storyGenre);
 			storyServ.createStory(story);
-			user.getStoryFavorited().add(story);
+			user.getFavorites().add(story);
 			return "redirect:/home";
 		}
 	}
@@ -171,5 +171,17 @@ public class StoryController {
 	        return "redirect:/users/${story.user}";
 	    }
 	}
+	
+	@RequestMapping("/stories/{id}/delete")
+	public String deleteStoryUserPage(@PathVariable("id") Long id, HttpSession session) {
+		if (session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		} else {
+			storyServ.deleteStory(storyServ.findStoryById(id));
+			return "redirect:/users/" + session.getAttribute("loggedInUser");
+		}
+	}
+	
+	
 
 }
