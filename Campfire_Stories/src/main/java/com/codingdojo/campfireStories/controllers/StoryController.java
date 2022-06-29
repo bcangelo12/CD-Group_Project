@@ -82,6 +82,7 @@ public class StoryController {
 			story.setUser(user);
 			story.setStoryGenre(storyGenre);
 			storyServ.createStory(story);
+			user.getStoryFavorited().add(story);
 			return "redirect:/home";
 		}
 	}

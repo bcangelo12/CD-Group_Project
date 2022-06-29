@@ -14,3 +14,15 @@ h1, h3 {
 h5 {
 	text-shadow: 2px 2px black;
 }
+
+.createtext1, .createtext2, .createtext3 {
+	margin-top: 15px;
+}
+
+.createtext2 {
+	margin-left: 15px;
+}
+
+.createtext3 {
+	margin-right: 40px;
+}
