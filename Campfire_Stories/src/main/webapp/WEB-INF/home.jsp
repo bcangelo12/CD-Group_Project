@@ -14,26 +14,23 @@
 <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="d-flex justify-content-around">
-		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>
-		<a href="/users/${user.id}"><img src='<c:url value="/img/.jpg"/>' alt="user profile page" class="user"/></a>
-		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>		
+	<div class="d-flex justify-content-end">
+		<a href="/logout" class="btn btn-danger my-2 me-2">Exit the Forest</a>
 	</div>
 	<div class="d-flex justify-content-around">
-		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>
-		<img src='<c:url value="/img/.jpg"/>' alt="tree pic" class="tree"/>
+		<a href="/stories/creepypasta"><img src='<c:url value="/img/creepypasta.png"/>' alt="creepypasta pic" class="icontop" title="Creepypastas"/></a>
 	</div>
-	<div class="d-flex justify-content-around">
-		<a href="/stories/Paranormal"><img src='<c:url value="/img/.jpg"/>' alt="paranormal pic" class="paranormal"/></a>
+	<div class="d-flex justify-content-around mt-3">
+		<a href="/stories/Psychological"><img src='<c:url value="/img/psychological.png"/>' alt="psychological pic" class="icon" title="Paranormal Stories"/></a>
+		<a href="/stories/Spiritual"><img src='<c:url value="/img/spiritual.png"/>' alt="spiritual pic" class="icon" title="Spiritual Stories"/></a>
 	</div>
-	<div class="d-flex justify-content-around">
-		<a href="/stories/Psychological"><img src='<c:url value="/img/.jpg"/>' alt="psychological pic" class="psychological"/></a>
-		<a href="/stories/new"><img src='<c:url value="/img/.jpg"/>' alt="create page pic" class="campfire"/></a>
-		<a href="/stories/Spiritual"><img src='<c:url value="/img/.jpg"/>' alt="spiritual pic" class="spiritual"/></a>
-	</div>
-	<div class="d-flex justify-content-between">
-		<a href="/stories/urban"><img src='<c:url value="/img/.jpg"/>' alt="urban legend pic" class="urban"/></a>
-		<a href="/stories/creepypasta"><img src='<c:url value="/img/.jpg"/>' alt="creepypasta pic" class="creepy"/></a>
+	<div class="d-flex justify-content-around mt-5">
+		<a href="/stories/urban"><img src='<c:url value="/img/urban.png"/>' alt="urban legend pic" class="icon" title="Urban Legends"/></a>
+		<div class="d-flex justify-content-center">
+			<a href="/users/${user.id}"><img src='<c:url value="/img/user.png"/>' alt="user profile page" class="icon" title="My Stories"/></a>	
+			<a href="/stories/new"><img src='<c:url value="/img/campfire.png"/>' alt="create page pic" class="campfire" title="Add a Story"/></a>
+		</div>
+		<a href="/stories/Paranormal"><img src='<c:url value="/img/paranormal.png"/>' alt="paranormal pic" class="icon" title="Paranormal Stories"/></a>
 	</div>
 </body>
 </html>

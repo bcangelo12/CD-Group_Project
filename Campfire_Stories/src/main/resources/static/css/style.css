@@ -14,3 +14,24 @@ h1, h3 {
 h5 {
 	text-shadow: 2px 2px black;
 }
+
+.icon {
+	height: 200px;
+	width: 200px;
+}
+
+.tree {
+	height: 250px;
+	width: 250px;
+}
+
+.campfire {
+	height: 200px;
+	width: 300px;
+}
+
+.icontop {
+	height: 200px;
+	width: 200px;
+	margin-top: 150px;
+}
