@@ -27,7 +27,6 @@
 			<form:errors path="storyTitle" class="error"/>
 			<form:input path="storyTitle"/>
 		</p>
-	
 		<p>
 			<form:select path="storyGenre">
 				<form:option value="Paranormal" label="Paranormal"/>
