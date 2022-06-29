@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css%22/%3E">
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/create-and-edit.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/logReg.css">
 </head>
 <body>
 	<div id="foglayer_01" class="fog">
@@ -49,11 +49,11 @@
 
         <p class="createtext2">
             <form:select path="storyGenre">
-                <form:option value="Paranormal" label="Paranormal"/>
-                <form:option value="Psychological" label="Psychological"/>
-                <form:option value="Spiritual" label="Spiritual"/>
-                <form:option value="Urban Legend" label="Urban Legend"/>
-                <form:option value="Creepypasta" label="Creepypasta"/>
+                <form:option value="Urban" label="Urban Legends"/>
+				<form:option value="Psychological" label="Psychological"/>
+				<form:option value="Creepypasta" label="Creepypastas"/>
+				<form:option value="Spiritual" label="Spiritual"/>
+				<form:option value="Paranormal" label="Paranormal"/>
             </form:select>
         </p>
 
@@ -64,7 +64,7 @@
         </p>
 
         <p>
-            <input type="submit" value="Submit" class="btn btn-primary"/>
+            <input type="submit" value="Submit" class="btn btn-danger my-2"/>
         </p>
 
     </form:form>
