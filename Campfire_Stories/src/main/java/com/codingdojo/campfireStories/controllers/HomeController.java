@@ -51,7 +51,7 @@ public class HomeController {
 		//Login User
 		
 		@PostMapping("/login")
-		public String loginUser(@Valid @ModelAttribute("newLogin") LoginUser loginUser,
+		public String loginUser(@ModelAttribute("newLogin") LoginUser loginUser,
 				BindingResult result,
 				HttpSession session,
 				@ModelAttribute("newUser") User user) {

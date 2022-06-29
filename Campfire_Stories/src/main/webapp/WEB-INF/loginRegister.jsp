@@ -6,6 +6,7 @@
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/css/logReg.css" /> 
+<link rel="stylesheet" href="/css/title.css" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,8 @@
 </head>
 <body id="page">
 
-	<div id="foglayer_01" class="fog">
+	
+<div id="foglayer_01" class="fog">
   <div class="image01"></div>
   <div class="image02"></div>
 </div>
@@ -26,7 +28,20 @@
   <div class="image01"></div>
   <div class="image02"></div>
 </div>
-
+	
+	<h1 class="bloodMessage">
+		Campfire Stories
+		<span class="drop"></span>
+		<span class="drop"></span>
+		<span class="drop"></span>
+		<span class="drop"></span>
+		<span class="drop"></span>
+		<span class="drop"></span>
+		
+	</h1>
+	
+	
+	
 	<p class="ptag">Register </p>
 	<form:form action="/register" method="post" modelAttribute="newUser">
 	
