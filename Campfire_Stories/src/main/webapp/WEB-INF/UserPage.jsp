@@ -12,10 +12,23 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/logReg.css" /> 
 <meta charset="UTF-8">
 <title>User Feed</title>
 </head>
 <body>
+	<div id="foglayer_01" class="fog">
+  	<div class="image01"></div>
+  	<div class="image02"></div>
+	</div>
+	<div id="foglayer_02" class="fog">
+  	<div class="image01"></div>
+  	<div class="image02"></div>
+	</div>
+	<div id="foglayer_03" class="fog">
+  	<div class="image01"></div>
+  	<div class="image02"></div>
+	</div>
 	<div class="d-flex justify-content-end">
 		<a href="/home" class="btn btn-danger my-2 me-2">Back to the Fire</a>
 	</div>
