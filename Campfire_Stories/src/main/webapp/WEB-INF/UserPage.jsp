@@ -57,8 +57,10 @@
 						</c:otherwise>
 					</c:choose>
 					<p class="card-text"><small>Story Genre: ${userStory.storyGenre}</small></p>
-					<a href="/stories/${userStory.id}/edit" class="btn btn-warning my-2">Edit</a>
-					<a href="/stories/${userStory.id}/delete" class="btn btn-danger my-2">Delete</a>
+					<div class="d-flex justify-content-around">
+						<a href="/stories/${userStory.id}/edit" class="btn btn-warning my-2">Edit</a>
+						<a href="/stories/${userStory.id}/delete" class="btn btn-danger my-2">Delete</a>
+					</div>
 				</div>
 			</div>
 		</c:if>
@@ -68,7 +70,7 @@
 	</div>
 	<div class="d-flex container flex-column justify-content-center align-items-center my-4">
 		<c:choose>
-		<c:when test="${loadedUser.storyFavorited.isEmpty()}">
+		<c:when test="${loadedUser.favorites.isEmpty()}">
 			<h3 class="text-light my-2">No favorited stories yet!</h3>
 		</c:when>
 		<c:otherwise>
@@ -76,6 +78,7 @@
 		<c:forEach var="favs" items="${stories}">
 		<!-- need to add condition to remove user submitted stories from here (if time) -->
 		<c:if test="${favs.favoriters.contains(loadedUser)}">
+			<c:if test="${favs.id == loadUser.stories.getId()}">
 			<div class="card text-center my-3 bg-secondary" style="width: 36rem;">
 				<div class="card-body">
 					<h5 class="card-title">${favs.storyTitle}</h5>
@@ -89,8 +92,12 @@
 						</c:otherwise>
 					</c:choose>
 					<p class="card-text"><small>Story Genre: ${favs.storyGenre}</small></p>
+					<p class="fst-italic text-center">This story is one of your favorites. Did a ghost add it without your knowledge?</p>
+					<a href="/users/${loadedUser.id}/${favs.id}/unfavorite" class="btn btn-danger">Unfavorite</a>
 				</div>
 			</div>
+			</c:if>
+			<h3>No favorite stories that aren't your own!</h3>
 		</c:if>
 		</c:forEach>
 		</c:otherwise>
