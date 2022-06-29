@@ -165,7 +165,8 @@ public class StoryController {
 		}
 		
 		if (result.hasErrors()) {
-	        return "redirect:/stories/{id}/edit";
+//	        return "redirect:/stories/{id}/edit";
+			return "editStory.jsp";
 	    } 
 	    
 		else {

@@ -2,13 +2,13 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page isErrorPage="true" %>
+<!DOCTYPE html>
+<html>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/css/logReg.css" /> 
 <link rel="stylesheet" href="/css/title.css" />
-<!DOCTYPE html>
-<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>LogInReg</title>
