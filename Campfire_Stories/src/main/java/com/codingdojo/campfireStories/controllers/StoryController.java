@@ -160,6 +160,10 @@ public class StoryController {
 	@PutMapping("/stories/{id}/edit")
 	public String update(@Valid @ModelAttribute("story") Story story, BindingResult result, String storyGenre, HttpSession session) {
 	    
+		if(session.getAttribute("loggedInUser") == null) {
+			return "redirect:/logout";
+		}
+		
 		if (result.hasErrors()) {
 	        return "redirect:/stories/{id}/edit";
 	    } 
@@ -172,6 +176,7 @@ public class StoryController {
 	    }
 	}
 	
+//	delete from user page
 	@RequestMapping("/stories/{id}/delete")
 	public String deleteStoryUserPage(@PathVariable("id") Long id, HttpSession session) {
 		if (session.getAttribute("loggedInUser") == null) {
