@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 public class LoginUser {
 	
-	@NotEmpty(message="An email is required for registration!")
+	@NotEmpty(message="An email is required for login!")
 	@Email(message="Please enter a valid email address!")
 	private String email;
 	
