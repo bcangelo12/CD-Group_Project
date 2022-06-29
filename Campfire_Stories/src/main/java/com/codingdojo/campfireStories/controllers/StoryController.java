@@ -44,28 +44,28 @@ public class StoryController {
 	@GetMapping("/stories/{storyGenre}")
 	public String stories(@PathVariable("storyGenre") String storyGenre, HttpSession session, Model model) {
 		
-		if (session.getAttribute("loggedInUser") == null) {
-			return "redirect:/logout";
-		}
-		else {
-			Long userId = (Long) session.getAttribute("loggedInUser");
-			model.addAttribute("user", userServ.findById(userId));
+//		if (session.getAttribute("loggedInUser") == null) {
+//			return "redirect:/logout";
+//		}
+//		else {
+//			Long userId = (Long) session.getAttribute("loggedInUser");
+//			model.addAttribute("user", userServ.findById(userId));
 			model.addAttribute("stories", storyServ.getAllStoriesByGenre(storyGenre));
 			return "showstories.jsp";	
 		}
-	}
+//	}
 
 	//create new stories
 	@GetMapping("/stories/new")
 	public String newStory(@ModelAttribute("story") Story story, Model model, HttpSession session) {
 	    
-		if(session.getAttribute("loggedInUser") == null) {
-			return "redirect:/logout";
-		}
-		
-	    User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
+//		if(session.getAttribute("loggedInUser") == null) {
+//			return "redirect:/logout";
+//		}
+//		
+//	    User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
 	    
-		model.addAttribute("user", user);
+//		model.addAttribute("user", user);
 	    
 	    return "newStory.jsp";
 	}
@@ -90,9 +90,9 @@ public class StoryController {
 	@GetMapping("/stories/{id}/edit")
 	public String edit(@PathVariable("id") Long id, Model model, HttpSession session) {
 	    
-		if(session.getAttribute("loggedInUser") == null) {
-			return "redirect:/logout";
-		}
+//		if(session.getAttribute("loggedInUser") == null) {
+//			return "redirect:/logout";
+//		}
 		
 		Story story = storyServ.findStoryById(id);
 	    model.addAttribute("story", story);
