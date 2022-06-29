@@ -49,4 +49,9 @@ public class StoryService {
 	public Story updateStory(Story story) {
 		return storyRepo.save(story);
 	}
+	
+	public void deleteStory(Story story) {
+		storyRepo.delete(story);
+	}
+	
 }
