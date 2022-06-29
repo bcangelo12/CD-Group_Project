@@ -11,9 +11,22 @@
 <meta charset="UTF-8">
 <title>${storyGenre}</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/logReg.css" /> 
 </head>
 <body>
+	<div id="foglayer_01" class="fog">
+		<div class="image01"></div>
+		<div class="image02"></div>
+	</div>
+	<div id="foglayer_02" class="fog">
+	  <div class="image01"></div>
+	  <div class="image02"></div>
+	</div>
+	<div id="foglayer_03" class="fog">
+	  <div class="image01"></div>
+	  <div class="image02"></div>
+	</div>
 	<div class="d-flex justify-content-end">
 		<a href="/home" class="btn btn-danger my-2 me-2">Back to the Fire</a>
 	</div>
@@ -29,9 +42,41 @@
 		</c:otherwise>
 	</c:choose>
 	<c:forEach var="story" items="${stories}">
-		<p>Title: ${story.storyTitle}</p>
-		<p>Content: ${story.storyContent}</p>
-		<p>Genre: ${story.storyGenre}</p>
+		<div class="card text-center my-3 bg-secondary d-flex justify-content-center container mt-5" style="width: 36rem;">
+			<div class="card-body">
+				<c:if test="${story.user.id == user.id}">
+					<div class="d-flex justify-content-between">
+						<a href="/stories/${story.id}/edit" class="btn btn-success">Edit</a>
+						<a href="/stories/${storyGenre}/${story.id}/delete" class="btn btn-danger">Delete</a>
+					</div>
+				</c:if>
+				<h5 class="card-title">${story.storyTitle}</h5>
+				<p class="card-text">${story.storyContent}</p>
+				<c:choose>
+					<c:when test="${story.updatedAt!=null}">
+						<p class="card-text"><small>Last updated on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${story.updatedAt}"></fmt:formatDate></small></p>
+					</c:when>
+					<c:otherwise>
+						<p class="card-text"><small>Created on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${story.createdAt}"></fmt:formatDate></small></p>
+					</c:otherwise>
+				</c:choose>
+				<c:forEach var="favoriteUser" items="${story.favoriters}">
+				<c:if test="${favoriteUser.id == user.id}">
+					<c:set var="favorited" value="true"/>
+				</c:if>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${favorited == true}">
+						<p class="fst-italic text-center">This story is one of your favorites. Did a ghost add it without your knowledge?</p>
+						<a href="/stories/${storyGenre}/${story.id}/unfavorite" class="btn btn-danger">Unfavorite</a>
+					</c:when>
+					<c:otherwise>
+						<a href="/stories/${storyGenre}/${story.id}/favorite" class="btn btn-primary">Add to Favorites</a>
+					</c:otherwise>
+				</c:choose>
+			</div>
+			<c:set var="favorited" value="false"/>
+		</div>
 	</c:forEach>
 </body>
 </html>
