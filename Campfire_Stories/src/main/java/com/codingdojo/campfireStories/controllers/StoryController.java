@@ -137,7 +137,8 @@ public class StoryController {
 			story.setUser(user);
 			story.setStoryGenre(storyGenre);
 			storyServ.createStory(story);
-			user.getStoryFavorited().add(story);
+			user.getFavorites().add(story);
+			userServ.updateUser(user);
 			return "redirect:/home";
 		}
 	}
@@ -166,9 +167,8 @@ public class StoryController {
 		else {
 			User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
 			story.setUser(user);
-			story.setStoryGenre(storyGenre);
 	        storyServ.updateStory(story);
-	        return "redirect:/users/${story.user}";
+	        return "redirect:/home";
 	    }
 	}
 

@@ -16,10 +16,10 @@
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/create-and-edit.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
 <div class="d-flex justify-content-end">
 	<a href="/home" class="btn btn-danger my-2 me-2">Back to the Fire</a>
 </div>
