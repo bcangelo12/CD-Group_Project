@@ -171,6 +171,7 @@ public class StoryController {
 		else {
 			User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
 			story.setUser(user);
+			user.getFavorites().add(story);
 	        storyServ.updateStory(story);
 	        return "redirect:/home";
 	    }
