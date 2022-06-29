@@ -1,5 +1,9 @@
 @charset "ISO-8859-1";
 
+h2 {
+	margin-top: 180px;
+}
+
 .createtext1, .createtext2, .createtext3 {
 	margin-top: 15px;
 }

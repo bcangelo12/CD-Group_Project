@@ -20,6 +20,18 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+	<div id="foglayer_01" class="fog">
+  	<div class="image01"></div>
+  	<div class="image02"></div>
+	</div>
+	<div id="foglayer_02" class="fog">
+  	<div class="image01"></div>
+  	<div class="image02"></div>
+	</div>
+	<div id="foglayer_03" class="fog">
+  	<div class="image01"></div>
+  	<div class="image02"></div>
+	</div>
 <div class="d-flex justify-content-end">
     <a href="/home" class="btn btn-danger my-2 me-2">Back to the Fire</a>
 </div>
