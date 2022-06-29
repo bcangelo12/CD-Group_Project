@@ -48,6 +48,7 @@
 		</p>
 	
 		<p class="createtext2">
+			<form:label path="storyGenre">Genre: </form:label>
 			<form:select path="storyGenre">
 				<form:option value="Urban" label="Urban Legends"/>
 				<form:option value="Psychological" label="Psychological"/>
