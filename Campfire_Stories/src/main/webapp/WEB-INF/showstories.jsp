@@ -41,42 +41,55 @@
 			<h1 class="text-center">${storyGenre} Stories</h1>
 		</c:otherwise>
 	</c:choose>
-	<c:forEach var="story" items="${stories}">
-		<div class="card text-center my-3 bg-secondary d-flex justify-content-center container mt-5" style="width: 36rem;">
-			<div class="card-body">
-				<c:if test="${story.user.id == user.id}">
-					<div class="d-flex justify-content-between">
-						<a href="/stories/${story.id}/edit" class="btn btn-success">Edit</a>
-						<a href="/stories/${storyGenre}/${story.id}/delete" class="btn btn-danger">Delete</a>
-					</div>
-				</c:if>
-				<h5 class="card-title">${story.storyTitle}</h5>
-				<p class="card-text">${story.storyContent}</p>
-				<c:choose>
-					<c:when test="${story.updatedAt!=null}">
-						<p class="card-text"><small>Last updated on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${story.updatedAt}"></fmt:formatDate></small></p>
-					</c:when>
-					<c:otherwise>
-						<p class="card-text"><small>Created on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${story.createdAt}"></fmt:formatDate></small></p>
-					</c:otherwise>
-				</c:choose>
-				<c:forEach var="favoriteUser" items="${story.favoriters}">
-				<c:if test="${favoriteUser.id == user.id}">
-					<c:set var="favorited" value="true"/>
-				</c:if>
-				</c:forEach>
-				<c:choose>
-					<c:when test="${favorited == true}">
-						<p class="fst-italic text-center">This story is one of your favorites. Did a ghost add it without your knowledge?</p>
-						<a href="/stories/${storyGenre}/${story.id}/unfavorite" class="btn btn-danger">Unfavorite</a>
-					</c:when>
-					<c:otherwise>
-						<a href="/stories/${storyGenre}/${story.id}/favorite" class="btn btn-primary">Add to Favorites</a>
-					</c:otherwise>
-				</c:choose>
+	<c:choose>
+		<c:when test="${stories.isEmpty()}">
+			<div class="container">
+				<h3 class="text-center mt-5">There have been no stories passed down... Perhaps those who knew some have inexplicably disappeared...</h3>
+				<p class="text-center mt-5 text-danger">Anyways... want to add one?</p>
+				<div class="d-flex justify-content-center">
+					<a href="/stories/new"><img src='<c:url value="/img/campfire.png"/>' alt="create page pic" class="campfire2" title="Add a Story"/></a>
+				</div>
 			</div>
-			<c:set var="favorited" value="false"/>
-		</div>
-	</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<c:forEach var="story" items="${stories}">
+				<div class="card text-center my-3 bg-secondary d-flex justify-content-center container mt-5" style="width: 36rem;">
+					<div class="card-body">
+						<c:if test="${story.user.id == user.id}">
+							<div class="d-flex justify-content-between">
+								<a href="/stories/${story.id}/edit" class="btn btn-success">Edit</a>
+								<a href="/stories/${storyGenre}/${story.id}/delete" class="btn btn-danger">Delete</a>
+							</div>
+						</c:if>
+						<h5 class="card-title">${story.storyTitle}</h5>
+						<p class="card-text">${story.storyContent}</p>
+						<c:choose>
+							<c:when test="${story.updatedAt!=null}">
+								<p class="card-text"><small>Last updated on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${story.updatedAt}"></fmt:formatDate></small></p>
+							</c:when>
+							<c:otherwise>
+								<p class="card-text"><small>Created on: <fmt:formatDate pattern="MMM dd, yy @ h:m a" value="${story.createdAt}"></fmt:formatDate></small></p>
+							</c:otherwise>
+						</c:choose>
+						<c:forEach var="favoriteUser" items="${story.favoriters}">
+						<c:if test="${favoriteUser.id == user.id}">
+							<c:set var="favorited" value="true"/>
+						</c:if>
+						</c:forEach>
+						<c:choose>
+							<c:when test="${favorited == true}">
+								<p class="fst-italic text-center">This story is one of your favorites. Did a ghost add it without your knowledge?</p>
+								<a href="/stories/${storyGenre}/${story.id}/unfavorite" class="btn btn-danger">Unfavorite</a>
+							</c:when>
+							<c:otherwise>
+								<a href="/stories/${storyGenre}/${story.id}/favorite" class="btn btn-primary">Add to Favorites</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<c:set var="favorited" value="false"/>
+				</div>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
