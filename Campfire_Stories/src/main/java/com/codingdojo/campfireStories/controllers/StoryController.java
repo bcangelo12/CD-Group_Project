@@ -137,7 +137,8 @@ public class StoryController {
 			story.setUser(user);
 			story.setStoryGenre(storyGenre);
 			storyServ.createStory(story);
-//			user.getStoryFavorited().add(story);
+			user.getFavorites().add(story);
+			userServ.updateUser(user);
 			return "redirect:/home";
 		}
 	}

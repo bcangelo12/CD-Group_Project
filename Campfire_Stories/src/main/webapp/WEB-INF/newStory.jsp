@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
 <div class="d-flex justify-content-end">
 	<a href="/home" class="btn btn-danger my-2 me-2">Back to the Fire</a>
 </div>
