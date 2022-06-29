@@ -16,6 +16,7 @@
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/create-and-edit.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>

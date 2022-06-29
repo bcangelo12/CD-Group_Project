@@ -15,14 +15,18 @@ h5 {
 	text-shadow: 2px 2px black;
 }
 
-.createtext1, .createtext2, .createtext3 {
-	margin-top: 15px;
+.icon {
+    height: 200px;
+    width: 200px;
 }
 
-.createtext2 {
-	margin-left: 15px;
+.campfire {
+    height: 200px;
+    width: 300px;
 }
 
-.createtext3 {
-	margin-right: 40px;
+.icontop {
+    height: 200px;
+    width: 200px;
+    margin-top: 150px;
 }

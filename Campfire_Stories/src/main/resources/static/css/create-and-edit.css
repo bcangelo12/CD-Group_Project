@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+.createtext1, .createtext2, .createtext3 {
+	margin-top: 15px;
+}
+
+.createtext2 {
+	margin-left: 15px;
+}
+
+.createtext3 {
+	margin-right: 40px;
+}
