@@ -2,6 +2,13 @@
 
 h2 {
 	margin-top: 180px;
+	color: white;
+	text-shadow: 2px 2px #ff0000;
+}
+
+p {
+	color: white;
+	text-shadow: 1px 1px #ff0000;
 }
 
 .createtext1, .createtext2, .createtext3 {
