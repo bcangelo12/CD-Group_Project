@@ -21,7 +21,7 @@
 		<a href="/stories/creepypasta"><img src='<c:url value="/img/creepypasta.png"/>' alt="creepypasta pic" class="icontop" title="Creepypastas"/></a>
 	</div>
 	<div class="d-flex justify-content-around mt-3">
-		<a href="/stories/Psychological"><img src='<c:url value="/img/psychological.png"/>' alt="psychological pic" class="icon" title="Paranormal Stories"/></a>
+		<a href="/stories/Psychological"><img src='<c:url value="/img/psychological.png"/>' alt="psychological pic" class="icon" title="Psychological Stories"/></a>
 		<a href="/stories/Spiritual"><img src='<c:url value="/img/spiritual.png"/>' alt="spiritual pic" class="icon" title="Spiritual Stories"/></a>
 	</div>
 	<div class="d-flex justify-content-around mt-5">

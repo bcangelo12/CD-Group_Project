@@ -16,9 +16,22 @@
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/create-and-edit.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+		<div id="foglayer_01" class="fog">
+		<div class="image01"></div>
+		<div class="image02"></div>
+	</div>
+	<div id="foglayer_02" class="fog">
+	  <div class="image01"></div>
+	  <div class="image02"></div>
+	</div>
+	<div id="foglayer_03" class="fog">
+	  <div class="image01"></div>
+	  <div class="image02"></div>
+	</div>
 <h2>Edit a story:</h2>
 	<form:form action="/stories/${story.id}/edit)" method="post" modelAttribute="story">
 	
