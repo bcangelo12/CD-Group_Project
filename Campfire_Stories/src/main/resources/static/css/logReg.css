@@ -20,6 +20,20 @@ body {
 	color: red;
 }
 
+.error {
+	color: #19e6cd;
+}
+
+
+.input {
+	position: relative;
+    z-index: 2;
+}
+
+.ptag {
+	color: #0CC5F3;
+}
+
 /* ---------- Fog ---------- */
 .fogwrapper {
   height: 100%;
