@@ -29,6 +29,7 @@
 		</p>
 	
 		<p>
+			<form:label path="storyGenre">Genre: </form:label>
 			<form:select path="storyGenre">
 				<form:option value="Paranormal" label="Paranormal"/>
 				<form:option value="Psychological" label="Psychological"/>
