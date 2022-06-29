@@ -46,6 +46,10 @@
 		<c:if test="${userStory.user.getId().equals(loadedUser.id)}">
 			<div class="card text-center my-3 bg-secondary" style="width: 36rem;">
 				<div class="card-body">
+					<div class="d-flex justify-content-between">
+						<a href="/stories/${userStory.id}/edit" class="btn btn-success">Edit</a>
+						<a href="/stories/${userStory.id}/delete" class="btn btn-danger">Delete</a>
+					</div>
 					<h5 class="card-title">${userStory.storyTitle}</h5>
 					<p class="card-text">${userStory.storyContent}</p>
 					<c:choose>
@@ -57,10 +61,6 @@
 						</c:otherwise>
 					</c:choose>
 					<p class="card-text"><small>Story Genre: ${userStory.storyGenre}</small></p>
-					<div class="d-flex justify-content-around">
-						<a href="/stories/${userStory.id}/edit" class="btn btn-warning my-2">Edit</a>
-						<a href="/stories/${userStory.id}/delete" class="btn btn-danger my-2">Delete</a>
-					</div>
 				</div>
 			</div>
 		</c:if>
