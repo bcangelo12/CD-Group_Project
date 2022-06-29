@@ -70,12 +70,13 @@ public class User {
 	private List<Story> stories;
 	
 	// boilerplate for favorite mapping
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
-			name="favorites",
-			joinColumns=@JoinColumn(name="user_id"),
-			inverseJoinColumns=@JoinColumn(name="story_id"))
-	private List<Story> storyFavorited;
+			name = "favorites",
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "story_id")
+			)
+	private List<Story> favorites;
 
 	public Long getId() {
 		return id;
@@ -141,14 +142,13 @@ public class User {
 		this.stories = stories;
 	}
 
-	public List<Story> getStoryFavorited() {
-		return storyFavorited;
+	public List<Story> getFavorites() {
+		return favorites;
 	}
-
-	public void setStoryFavorited(List<Story> storyFavorited) {
-		this.storyFavorited = storyFavorited;
+	
+	public void setFavorites(List<Story> favorites) {
+		this.favorites = favorites;
 	}
-
 	
 	
 	

@@ -26,12 +26,15 @@ public class ProfileController {
 	@GetMapping("/users/{id}")
 	public String showUser(@PathVariable("id") Long id, Model model, HttpSession session, Story story) {
 		// set up models for user and stories
-//		if(session.getAttribute("loggedInUser")!=null)
-		User loadedUser = userServ.findById(id);
-		model.addAttribute("loadedUser", loadedUser);
-		model.addAttribute("stories",storyServ.getAllStories());
-
-		return "UserPage.jsp";
+		if(session.getAttribute("loggedInUser")==null) {
+			return "redirect:/logout";
+		} else if(session.getAttribute("loggedInUser")==id) {
+			User loadedUser = userServ.findById(id);
+			model.addAttribute("loadedUser", loadedUser);
+			model.addAttribute("stories",storyServ.getAllStories());
+			return "UserPage.jsp";
+		} else {
+			return "redirect:/logout";
+		}
 	}
-
 }

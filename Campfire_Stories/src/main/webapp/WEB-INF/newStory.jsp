@@ -14,21 +14,28 @@
 <meta charset="ISO-8859-1">
 <title>Create a New Story</title>
     <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+<div class="d-flex justify-content-end">
+	<a href="/home" class="btn btn-danger my-2 me-2">Back to the Fire</a>
+</div>
+<div class="d-flex container flex-column text-center justify-content-center align-items-center">	
 <h2>Add a story:</h2>
+</div>
+	<div class="d-flex container flex-column text-center justify-content-center align-items-center">		
 	<form:form action="/stories/new" method="post" modelAttribute="story">
 	
-		<p>
+		<p class="createtext1">
 			<form:label path="storyTitle">Story Title: </form:label>
 			<form:errors path="storyTitle" class="error"/>
 			<form:input path="storyTitle"/>
 		</p>
 	
-		<p>
+		<p class="createtext2">
 			<form:select path="storyGenre">
 				<form:option value="Paranormal" label="Paranormal"/>
 				<form:option value="Psychological" label="Psychological"/>
@@ -38,7 +45,7 @@
 			</form:select>
 		</p>
 				
-		<p>
+		<p class="createtext3">
 			<form:label path="storyContent">Tell your tale: </form:label>
 			<form:errors path="storyContent" class="error"/>
 			<form:textarea rows="3" path="storyContent"/>
@@ -46,10 +53,9 @@
 		
 		<p>
 			<input type="submit" value="Submit" class="btn btn-primary"/>
-			<a href="/home" class="btn btn-primary">Cancel</a>
 		</p>
 				
 	</form:form>
-	
+	</div>
 </body>
 </html>

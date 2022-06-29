@@ -64,7 +64,7 @@ public class Story {
 	private User user;
 	
 	// boilerplate for favorite mapping
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.LAZY)
 	@JoinTable(
 			name="favorites",
 			joinColumns=@JoinColumn(name="story_id"),
