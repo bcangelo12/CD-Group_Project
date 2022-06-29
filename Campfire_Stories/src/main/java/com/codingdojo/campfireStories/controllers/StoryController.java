@@ -126,7 +126,7 @@ public class StoryController {
 	}
 	
 	@PostMapping("/stories/new")
-	public String index(@Valid @ModelAttribute("story") Story story, String storyGenre, BindingResult result, HttpSession session) {
+	public String index(@Valid @ModelAttribute("story") Story story, BindingResult result, String storyGenre, HttpSession session) {
 		
 		if(result.hasErrors()) {
 			return "newStory.jsp";
@@ -137,6 +137,7 @@ public class StoryController {
 			story.setUser(user);
 			story.setStoryGenre(storyGenre);
 			storyServ.createStory(story);
+			user.getStoryFavorited().add(story);
 			return "redirect:/home";
 		}
 	}
@@ -156,15 +157,18 @@ public class StoryController {
 	}
 	
 	@PutMapping("/stories/{id}/edit")
-	public String update(@Valid @ModelAttribute("story") Story story, BindingResult result) {
+	public String update(@Valid @ModelAttribute("story") Story story, BindingResult result, String storyGenre, HttpSession session) {
 	    
 		if (result.hasErrors()) {
 	        return "redirect:/stories/{id}/edit";
 	    } 
 	    
 		else {
+			User user = userServ.findById((Long)session.getAttribute("loggedInUser"));
+			story.setUser(user);
+			story.setStoryGenre(storyGenre);
 	        storyServ.updateStory(story);
-	        return "redirect:/home";
+	        return "redirect:/users/${story.user}";
 	    }
 	}
 
